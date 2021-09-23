@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import actions from 'redux/actions';
 import shortid from 'shortid';
 import s from './ContactForm.module.css';
 
@@ -21,7 +23,7 @@ const ContactForm = ({ onSubmit }) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        onSubmit({ name, number });
+        onSubmit( name, number );
         reset();
     };
 
@@ -68,4 +70,8 @@ const ContactForm = ({ onSubmit }) => {
     );
 };
 
-export default ContactForm;
+const mapDispatchToProps = dispatch => ({
+    onSubmit: (name, number) => dispatch(actions.addContact(name,number)),
+})
+
+export default connect(null, mapDispatchToProps)(ContactForm);
