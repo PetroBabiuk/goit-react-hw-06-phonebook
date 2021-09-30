@@ -3,20 +3,7 @@ import ContactForm from './components/ContactForm';
 import Filter from './components/Filter';
 import ContactList from './components/ContactList';
 
-const App = () => {
-
-  //   useEffect(() => {
-    // const contacts = JSON.parse(localStorage.getItem('contacts'));
-    // if (contacts) {
-    //   setContacts(contacts);
-    // }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
-
-  return (
+const App = () => (
     <div>
       <h1 className="text">Phonebook</h1>
       <ContactForm />
@@ -25,7 +12,5 @@ const App = () => {
       <ContactList />
     </div>
   )
-
-}
 
 export default (App);
